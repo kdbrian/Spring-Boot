@@ -25,7 +25,7 @@ public class User {
 	public User(String fname, String lname) {
 		this.fname = fname;
 		this.lname = lname;
-		this.id = this.generateId().toString();
+		this.id = this.toString(this.generateId());
 		this.dateJoined=LocalDate.now();
 		this.isActive=true;
 		this.role=Role.SUPERUSER;
@@ -95,8 +95,8 @@ public class User {
 		this.isActive = isActive;
 	}
 	
-	public String toString() {
-		return "id@"+this.getId();
+	public String toString(String id) {
+		return "id@"+id;
 	}
 
 	/**
