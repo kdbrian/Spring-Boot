@@ -5,7 +5,11 @@ import java.util.Date;
 import java.util.UUID;
 
 //Add comments
-/***/
+/**
+
+Representation of a normal user entity
+
+*/
 public class User {
 
 	private String id;
