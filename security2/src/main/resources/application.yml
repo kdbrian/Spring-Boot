@@ -3,8 +3,8 @@ server:
   
 spring:
   datasource:
-    username: 
-    password: star
+    username: dev
+    password: 2022
     url: jdbc:mysql://localhost:3306/springsecurity
     driver-class-name: com.mysql.cj.jdbc.Driver 
   jpa:
