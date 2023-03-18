@@ -3,7 +3,7 @@ server:
   
 spring:
   datasource:
-    username: junrdev
+    username: 
     password: star
     url: jdbc:mysql://localhost:3306/springsecurity
     driver-class-name: com.mysql.cj.jdbc.Driver 
