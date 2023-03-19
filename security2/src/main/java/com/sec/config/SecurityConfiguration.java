@@ -11,11 +11,14 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import jakarta.servlet.Filter;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 @Configuration
 @EnableWebSecurity
-@RequiredArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
 public class SecurityConfiguration {
 
 	
@@ -28,7 +31,7 @@ public class SecurityConfiguration {
 		http
 			.csrf().disable()
 			.authorizeHttpRequests()
-			.requestMatchers("")
+			.requestMatchers("/api/v1/auth/**")
 			.permitAll()//upto here permits unauthenticated requests/ white list requests
 			.anyRequest()
 			.authenticated()
