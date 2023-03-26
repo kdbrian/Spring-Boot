@@ -1,5 +1,6 @@
 package com.library.books.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 import com.library.books.model.Book;
 import com.library.books.model.BookNotFoundException;
+import com.library.books.model.Genre;
 import com.library.books.repo.BookRepository;
 
 @Component
@@ -41,5 +43,36 @@ public class BookService {
 		Book b = getBook(id);
 		
 		bookrepo.delete(b);
+	}
+	
+	public Book getBookByTitle(String title) {
+		List<Book> books = bookrepo.findAll();
+		
+		for(Book b: books)
+			if(b.getTitle().equals(title))
+				return b;
+		throw new BookNotFoundException(title);
+	}
+
+	public List<Book> getAuthorBooks(String authorname) {
+		
+		List<Book> books = bookrepo.findAll();
+		
+		List<Book> authBooks = new ArrayList<>();
+		
+		for(Book b: books)
+			if(b.getAuthor().equals(authorname))
+				authBooks.add(b);
+		return authBooks;
+	}
+
+	public List<Book> getGenreBooks(Genre genre) {
+		
+		List<Book> genreBooks = new ArrayList<>();
+		
+		for(Book b: bookrepo.findAll())
+			if(b.getGenre().equals(genre))
+				genreBooks.add(b);
+		return genreBooks;
 	}
 }
