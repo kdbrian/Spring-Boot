@@ -7,5 +7,5 @@ import com.library.books.model.Book;
 
 @Repository
 public interface BookRepository extends JpaRepository<Book, Long>{
-
+//	public Book findById(Long id);
 }
