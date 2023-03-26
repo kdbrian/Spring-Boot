@@ -4,6 +4,7 @@ import java.util.Objects;
 
 import com.fasterxml.jackson.databind.cfg.EnumFeature;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -15,34 +16,32 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "books")
 public class Book {
-
-	static int counter;
 	
-	static {
-		counter=1;
-	}
-	
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-	
-	@Id
+	@Column(unique = true)
 	private String title;
+
+	@Id
+	@GeneratedValue
+	private Long id;
 	
 	private String author;
 	
 	private int noInStock;
 	
-	private String genre;
+	@Enumerated(EnumType.STRING)
+	private Genre genre;
+	
+	private int noOfPages;
 
 	public Book() {}
 	
-	public Book(String title, String author, int noInStock, String genre) {
-		this.id=(long) counter;
+	public Book(String title, String author, int noInStock,Genre genre, int pages) {
 		this.title = title;
 		this.author = author;
 		this.noInStock = noInStock;
+//		genre=genre.toUpperCase();
 		this.genre = genre;
-		counter++;
+		this.noOfPages=pages;
 	}
 
 	public Long getId() {
@@ -61,7 +60,7 @@ public class Book {
 		return noInStock;
 	}
 
-	public String getGenre() {
+	public Genre getGenre() {
 		return genre;
 	}
 
@@ -77,8 +76,16 @@ public class Book {
 		this.noInStock = noInStock;
 	}
 
-	public void setGenre(String genre) {
+	public void setGenre(Genre genre) {
 		this.genre = genre;
+	}
+
+	public int getNoOfPages() {
+		return noOfPages;
+	}
+
+	public void setNoOfPages(int noOfPages) {
+		this.noOfPages = noOfPages;
 	}
 
 	@Override
