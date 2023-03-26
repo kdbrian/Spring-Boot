@@ -99,4 +99,9 @@ public class BookController {
 		return new ResponseEntity<>("Deleted book with id"+id, HttpStatus.NO_CONTENT); 
 	}
 	
+	@GetMapping("/genre/")
+	public List<Genre> getGenres(){
+		return List.of(Genre.values());
+	}
+	
 }
