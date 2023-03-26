@@ -41,7 +41,6 @@ public class BookService {
 	
 	public void deleteBook(Long id) {
 		Book b = getBook(id);
-		
 		bookrepo.delete(b);
 	}
 	
@@ -74,5 +73,11 @@ public class BookService {
 			if(b.getGenre().equals(genre))
 				genreBooks.add(b);
 		return genreBooks;
+	}
+	public void updateBook(Book book) {
+		if(bookrepo.existsById(book.getId()))
+			bookrepo.save(book);
+		
+		throw new BookNotFoundException(book.getId());
 	}
 }
