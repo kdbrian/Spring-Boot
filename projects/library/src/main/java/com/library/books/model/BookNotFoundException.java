@@ -10,5 +10,10 @@ public class BookNotFoundException extends RuntimeException {
 		super("Book with id "+id+" not found");
 	}
 
+	public BookNotFoundException(String message) {
+		super("Book with title "+message+" does not exist");
+	}
+
+	
 	
 }
