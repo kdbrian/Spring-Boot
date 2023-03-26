@@ -1,8 +1,12 @@
 package com.library.books.model;
 
+import java.util.HashSet;
+import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 import com.fasterxml.jackson.databind.cfg.EnumFeature;
+import com.library.users.model.User;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -11,6 +15,10 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -32,6 +40,15 @@ public class Book {
 	private Genre genre;
 	
 	private int noOfPages;
+
+	@ManyToMany
+	@JoinTable(
+			name ="borrowed_books",
+			joinColumns = @JoinColumn(referencedColumnName = "id"),
+			inverseJoinColumns = @JoinColumn(referencedColumnName = "id")
+			)
+	private Set<User> borrowedBy = new HashSet<>();
+	
 
 	public Book() {}
 	
@@ -86,6 +103,12 @@ public class Book {
 
 	public void setNoOfPages(int noOfPages) {
 		this.noOfPages = noOfPages;
+	}
+	
+	
+
+	public Set<User> getBorrowedBy() {
+		return borrowedBy;
 	}
 
 	@Override
