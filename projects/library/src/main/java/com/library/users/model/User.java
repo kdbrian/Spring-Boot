@@ -1,15 +1,24 @@
 package com.library.users.model;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
+import org.hibernate.annotations.ManyToAny;
+
+import com.library.books.model.Book;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "_users")
@@ -22,11 +31,19 @@ public class User {
 	@GeneratedValue
 	private Long id;
 	
+	@Column(unique = true)
 	private String username;
 	
+	@Column(unique = true)
 	private String email;
 	
+	@ManyToMany(mappedBy = "borrowedBy")
+	private Set<Book> books;
+	
 	private Date dateJoined;
+	
+	@Enumerated(EnumType.STRING)
+	private Role role;
 	
 	public User() {}
 	
@@ -34,6 +51,7 @@ public class User {
 		this.username = username;
 		this.email = email;
 		this.dateJoined = dateJoined;
+		this.books=new HashSet<>();
 	}
 
 	public String getUsername() {
@@ -63,15 +81,28 @@ public class User {
 	public Long getId() {
 		return id;
 	}
+	
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
+	public Set<Book> getBooks() {
+		return books;
+	}
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", email=" + email + ", dateJoined=" + dateJoined + "]";
+		return "User [id=" + id + ", username=" + username + ", email=" + email + ", books=" + books + ", dateJoined="
+				+ dateJoined + ", role=" + role + "]";
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(dateJoined, email, id, username);
+		return Objects.hash(books, dateJoined, email, id, role, username);
 	}
 
 	@Override
@@ -83,8 +114,9 @@ public class User {
 		if (getClass() != obj.getClass())
 			return false;
 		User other = (User) obj;
-		return Objects.equals(dateJoined, other.dateJoined) && Objects.equals(email, other.email)
-				&& Objects.equals(id, other.id) && Objects.equals(username, other.username);
+		return Objects.equals(books, other.books) && Objects.equals(dateJoined, other.dateJoined)
+				&& Objects.equals(email, other.email) && Objects.equals(id, other.id) && role == other.role
+				&& Objects.equals(username, other.username);
 	}
 
 	
