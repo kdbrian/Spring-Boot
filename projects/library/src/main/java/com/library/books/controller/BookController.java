@@ -104,4 +104,9 @@ public class BookController {
 		return List.of(Genre.values());
 	}
 	
+	@DeleteMapping("/delete/{id}")
+	public ResponseEntity<String> deleteBook(@PathVariable Long id){
+		service.deleteBook(id);
+		return new ResponseEntity<String>("Book deleted", HttpStatus.NO_CONTENT);
+	}
 }
