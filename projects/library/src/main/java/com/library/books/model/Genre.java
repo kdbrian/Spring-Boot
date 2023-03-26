@@ -2,7 +2,9 @@ package com.library.books.model;
 
 import org.springframework.stereotype.Component;
 
-//@Component
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+
 public enum Genre {
 	COMPUTER_SCIENCE,
 	MEDICINE,
@@ -13,5 +15,7 @@ public enum Genre {
 	WILDLIFE,
 	MICROBIOLOGY,
 	PHSYCHOLOGY,
-	MOTIVATION
+	MUSIC,
+	MOTIVATION;
+	
 }
