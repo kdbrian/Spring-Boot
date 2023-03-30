@@ -1,0 +1,19 @@
+server:
+  port: 8081
+  
+spring:
+  datasource:
+    username: dev
+    password: 2022
+    url: jdbc:mysql://localhost:3306/springsecurity
+#    driver-class-name: com.mysql.cj.jdbc.Driver 
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true 
+    properties:
+     hibernate:
+      format_sql: true
+      
+    database: mysql
+#    database-platform: 
