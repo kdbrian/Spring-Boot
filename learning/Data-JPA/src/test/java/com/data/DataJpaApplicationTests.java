@@ -94,4 +94,29 @@ class DataJpaApplicationTests {
 	public void printStudentByFirstNameOrLastName(){
 		System.out.println(studentRepository.findByFirstNameOrLastName("Brian", "Ngugi"));
 	}
+
+	@Test
+	public void testGetStudentByMailAdress(){
+		System.out.println("student = " + studentRepository.getStudentByEmailAdress("brian3@dev.io"));
+	}
+
+	@Test
+	public void testGetStudentFirstNameByMailAdress() {
+		System.out.println("student = " + studentRepository.getStudentFirstNameByEmailAdress("brian3@dev.io"));
+	}
+
+	@Test
+	public void testGetStudentFirstNameByMailAdressNative() {
+		System.out.println("student = " + studentRepository.getStudentByEmailAdressNative("brian3@dev.io"));
+	}
+
+	@Test
+	public void testGetStudentFirstNameByMailAdressNativeNamedParam() {
+		System.out.println("student = " + studentRepository.getStudentByEmailAdressNativeNamedParam("brian3@dev.io"));
+	}
+
+	@Test
+	public void updateStudentNameByEmailTest(){
+		System.out.println(studentRepository.updateStudentNameByEmail("brian", "brian3@dev.io"));
+	}
 }
