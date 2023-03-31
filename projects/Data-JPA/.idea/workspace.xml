@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e3d8b525-76ac-46a4-9649-4312a54f29d6" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="alwaysUpdateSnapshots" value="true" />
+        <option name="mavenHome" value="/usr/share/maven" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2Ng7w5KXny17JNkECquxXi7FCV2" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/junrdev/Documents/Springboot/learning/Data-JPA",
+    "settings.build.tools.auto.reload": "SELECTIVE",
+    "settings.editor.selected.configurable": "build.tools"
+  }
+}]]></component>
+  <component name="RunManager" selected="JUnit.DataJpaApplicationTests.printStudentByFirstNameOrLastName">
+    <configuration name="DataJpaApplicationTests.printByFirstNameContaining" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Data-JPA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.data.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.data" />
+      <option name="MAIN_CLASS_NAME" value="com.data.DataJpaApplicationTests" />
+      <option name="METHOD_NAME" value="printByFirstNameContaining" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataJpaApplicationTests.printStudentByFirstName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Data-JPA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.data.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.data" />
+      <option name="MAIN_CLASS_NAME" value="com.data.DataJpaApplicationTests" />
+      <option name="METHOD_NAME" value="printStudentByFirstName" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataJpaApplicationTests.printStudentByFirstNameLastName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Data-JPA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.data.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.data" />
+      <option name="MAIN_CLASS_NAME" value="com.data.DataJpaApplicationTests" />
+      <option name="METHOD_NAME" value="printStudentByFirstNameLastName" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataJpaApplicationTests.printStudentByFirstNameOrLastName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Data-JPA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.data.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.data" />
+      <option name="MAIN_CLASS_NAME" value="com.data.DataJpaApplicationTests" />
+      <option name="METHOD_NAME" value="printStudentByFirstNameOrLastName" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataJpaApplicationTests.printStudentbyGuardianName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Data-JPA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.data.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.data" />
+      <option name="MAIN_CLASS_NAME" value="com.data.DataJpaApplicationTests" />
+      <option name="METHOD_NAME" value="printStudentbyGuardianName" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.DataJpaApplicationTests.printStudentByFirstNameOrLastName" />
+        <item itemvalue="JUnit.DataJpaApplicationTests.printStudentByFirstNameLastName" />
+        <item itemvalue="JUnit.DataJpaApplicationTests.printStudentbyGuardianName" />
+        <item itemvalue="JUnit.DataJpaApplicationTests.printByFirstNameContaining" />
+        <item itemvalue="JUnit.DataJpaApplicationTests.printStudentByFirstName" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e3d8b525-76ac-46a4-9649-4312a54f29d6" name="Changes" comment="" />
+      <created>1680074112983</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1680074112983</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Data_JPA$DataJpaApplicationTests_saveStudent.ic" NAME="DataJpaApplicationTests.saveStudent Coverage Results" MODIFIED="1680113774896" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.data.*</FILTER>
+    </SUITE>
+  </component>
+</project>
