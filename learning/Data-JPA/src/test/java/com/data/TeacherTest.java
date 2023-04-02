@@ -56,4 +56,11 @@ public class TeacherTest {
 
         System.out.println(teacherRepository.save(teacher));
     }
+
+    @Test
+    public void getTeachers(){
+        List<Teacher> teachers = teacherRepository.findAll();
+
+        System.out.println("teachers = " + teachers);
+    }
 }

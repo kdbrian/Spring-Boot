@@ -74,6 +74,7 @@ public class CourseTest {
     public  void testfindByTitleContaining(){
 
         Pageable firstPageTenRecs = PageRequest.of(0, 10, Sort.by("credit"));
+
         //looks for first 10 records containing C in the title
         List<Course> courses = courseRepository.findByCourseTitleContaining("C", firstPageTenRecs).getContent();
 
@@ -101,5 +102,12 @@ public class CourseTest {
         course.addStudent(student);
 
      courseRepository.save(course);
+    }
+
+    @Test
+    public void getTeachers(){
+        List<Course> courses = courseRepository.findAll();
+
+        System.out.println("courses = " + courses);
     }
 }
