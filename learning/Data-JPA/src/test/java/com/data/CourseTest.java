@@ -1,6 +1,8 @@
 package com.data;
 
 import com.data.entity.Course;
+import com.data.entity.CourseMaterial;
+import com.data.entity.Teacher;
 import com.data.repository.CourseRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,5 +22,10 @@ public class CourseTest {
                 .build();
 
         courseRepository.save(course);
+    }
+
+    @Test
+    public  void printCourses(){
+        System.out.println(courseRepository.findAll());
     }
 }

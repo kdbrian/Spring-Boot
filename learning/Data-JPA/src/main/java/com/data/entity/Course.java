@@ -28,4 +28,15 @@ public class Course {
     private String courseTitle;
     private Integer credit;
 
+    @OneToOne(mappedBy = "course")
+    private CourseMaterial courseMaterial;
+    //allows the course to be printed together with the course material
+
+
+    @ManyToOne//maps many courses to one teacher
+    @JoinColumn(
+            name = "teacherId",
+            referencedColumnName = "Id"
+    )
+    private Teacher teacher;
 }

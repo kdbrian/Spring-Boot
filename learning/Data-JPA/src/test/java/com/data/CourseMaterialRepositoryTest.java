@@ -27,4 +27,9 @@ public class CourseMaterialRepositoryTest {
 
         System.out.println(courseMaterialRepository.save(courseMaterial));
     }
+
+    @Test
+    public void testPrintCOurseMaterial(){
+        System.out.println(courseMaterialRepository.findAll());
+    }
 }
