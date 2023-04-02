@@ -2,6 +2,7 @@ package com.data;
 
 import com.data.entity.Course;
 import com.data.entity.CourseMaterial;
+import com.data.entity.Student;
 import com.data.entity.Teacher;
 import com.data.repository.CourseRepository;
 import org.junit.jupiter.api.Test;
@@ -77,5 +78,28 @@ public class CourseTest {
         List<Course> courses = courseRepository.findByCourseTitleContaining("C", firstPageTenRecs).getContent();
 
         System.out.println("courses = " + courses);
+    }
+
+    @Test
+    public void testSaveStudentAndTeacher(){
+        Teacher teacher = Teacher.builder()
+                .firstName("Benard")
+                .lastName("Fucker")
+                .build();
+
+        Student student = Student.builder()
+                .firstName("Blessed")
+                .lastName("Vessel")
+                .email("blessed@dev.io")
+                .build();
+
+        Course course = Course.builder()
+                .courseTitle("demo many to many")
+                .credit(3)
+                .teacher(teacher)
+                .build();
+        course.addStudent(student);
+
+     courseRepository.save(course);
     }
 }
