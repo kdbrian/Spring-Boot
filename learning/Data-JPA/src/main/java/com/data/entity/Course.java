@@ -7,6 +7,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -39,4 +42,25 @@ public class Course {
             referencedColumnName = "Id"
     )//the course is has a new column that identifies the tutor who delivers it
     private Teacher teacher;
+
+    @ManyToMany
+    @JoinTable(
+            name = "student_course_mapping",
+            joinColumns = @JoinColumn(//first column from the first table
+                    name = "course_id",//column name
+                    referencedColumnName = "courseId"//referenced field
+            ),
+            inverseJoinColumns = @JoinColumn(//second column from second table
+                    name = "student_id",//column name
+                    referencedColumnName = "studentId"//referenced field
+                    //the list item(student) is the one used in the inversecolumnjoin
+            )
+    )
+    private List<Student> students;
+
+    //method to add students to the list
+    public void addStudent(Student student){
+        if(students == null) students = new ArrayList<>();
+        students.add(student);
+    }
 }
