@@ -36,14 +36,16 @@ public class Course {
     //allows the course to be printed together with the course material
 
 
-    @ManyToOne//maps many courses to one teacher
+    @ManyToOne(cascade = CascadeType.ALL)//maps many courses to one teacher
     @JoinColumn(
             name = "teacherId",
             referencedColumnName = "Id"
     )//the course is has a new column that identifies the tutor who delivers it
     private Teacher teacher;
 
-    @ManyToMany
+    @ManyToMany(
+            cascade = CascadeType.ALL
+    )
     @JoinTable(
             name = "student_course_mapping",
             joinColumns = @JoinColumn(//first column from the first table
