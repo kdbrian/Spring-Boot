@@ -37,6 +37,6 @@ public class Course {
     @JoinColumn(
             name = "teacherId",
             referencedColumnName = "Id"
-    )
+    )//the course is has a new column that identifies the tutor who delivers it
     private Teacher teacher;
 }
