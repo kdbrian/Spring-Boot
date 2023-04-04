@@ -42,7 +42,7 @@ public class Employee {
     @Embedded
     private Adress adress;
 
-    @OneToOne(cascade = CascadeType.ALL)//one employee can belong to one department
+    @OneToOne//(cascade = CascadeType.ALL)//one employee can belong to one department
     @JoinColumn( name = "dept_id", referencedColumnName = "departmentId")
     private Department department;
 }
