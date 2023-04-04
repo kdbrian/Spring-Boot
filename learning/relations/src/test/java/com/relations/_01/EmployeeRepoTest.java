@@ -77,18 +77,21 @@ public class EmployeeRepoTest {
     @Test
     public void testInsertEmployeeWithDepartmentExisting(){
         //assuming we already know the id of the dept to which the employee shud be registered
+        //disable cascade in the class
         Department department = departmentRepository.findById(1l).get();
         Adress adress = Adress.builder()
                 .location("Tano nane")
                 .zipCode(58l)
                 .build();
+        System.out.println("department = " + department);
         Employee employee = Employee.builder()
                 .fname("yellow")
                 .lname("boy")
-                .email("yellow@boy.io")
+                .email("yellow2@boy.io")
                 .isActive(true)
                 .dateJoined(new Date(System.currentTimeMillis()))
                 .adress(adress)
+                .department(department)
                 .build();
 
         employeeRepository.save(employee);
