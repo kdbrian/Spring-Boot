@@ -38,4 +38,7 @@ public class Employee {
     private String email;
 
     private Boolean isActive;
+
+    @Embedded
+    private Adress adress;
 }
