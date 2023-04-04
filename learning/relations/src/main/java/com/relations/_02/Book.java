@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 public class Book {
 
     @Id
-    @SequenceGenerator(name = "book_seq", sequenceName = "book_seq")
+    @SequenceGenerator(name = "book_seq", sequenceName = "book_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "book_seq")
     private Long bookId;
 
