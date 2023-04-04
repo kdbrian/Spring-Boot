@@ -1,0 +1,17 @@
+server:
+  port: 40411
+
+spring:
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/flightapplication
+    username: dev
+    password: 2022
+
+  jpa:
+    show-sql: true
+
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.MYSQL5InnoDBDialect
+
