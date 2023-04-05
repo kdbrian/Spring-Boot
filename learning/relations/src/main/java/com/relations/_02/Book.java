@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -24,5 +26,8 @@ public class Book {
     private Genre genre;
 
     private int noOfPages;
+
+    @ManyToMany(mappedBy = "bookList")//must exist for many to many mapping
+    private List<User> users;
 
 }
