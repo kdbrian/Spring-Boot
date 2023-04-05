@@ -12,6 +12,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -26,4 +28,13 @@ public class School {
 
     private String schoolName;
 
+    @OneToMany(
+            mappedBy = "school",
+            cascade = CascadeType.ALL
+    )
+    private List<Student> students;
+
+    public void addStudent(){
+
+    }
 }
