@@ -28,4 +28,14 @@ public class Student {
     private String lastName;
     private String email;
 
+
+    @ManyToOne( cascade = CascadeType.ALL)
+    @JoinColumn(
+            name = "school",
+            referencedColumnName = "schoolId",
+            nullable = false//makes not being able to save student without the school id
+    )
+
+    private School school;
+
 }
