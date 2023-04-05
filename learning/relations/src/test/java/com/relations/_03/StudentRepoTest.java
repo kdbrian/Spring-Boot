@@ -16,6 +16,12 @@ public class StudentRepoTest {
 
     @Test
     public void saveDefaultStudent(){
+        Student student = Student.builder()
+                .firstName("brian")
+                .lastName("kidiga")
+                .email("br@dev.io")
+                .build();
 
+        studentRepository.save(student);
     }
 }
