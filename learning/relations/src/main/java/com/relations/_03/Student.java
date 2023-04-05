@@ -6,7 +6,7 @@ package com.relations._03;
 * this creates a Many to one(many students can belong to the same school)
 * */
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,4 +18,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class Student {
+
+    @Id
+    @SequenceGenerator(name = "stud_seq", sequenceName = "stud_seq", allocationSize = 11)
+    @GeneratedValue( strategy = GenerationType.SEQUENCE,generator = "stud_seq")
+    private Long studentId;
+
+    private String firstName;
+    private String lastName;
+    private String email;
+
 }
