@@ -30,15 +30,17 @@ public class User {
 
     private Boolean isActive;
 
-    @ManyToMany//(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToMany( cascade = CascadeType.ALL)
     @JoinTable(
             name = "user_books",
             joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "uid"),
             inverseJoinColumns = @JoinColumn(name = "book_id", referencedColumnName = "bookId")
-    )
-    private List<Book> bookList = new ArrayList<>();
+    )//this relationship is bidirectional
+    private List<Book> bookList;
 
     public void addBook(Book ... books){
+        if(bookList == null)
+            bookList=new ArrayList<>();
         bookList.addAll(List.of(books));
     }
 
