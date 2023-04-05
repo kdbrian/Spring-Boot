@@ -27,7 +27,7 @@ public class Book {
 
     private int noOfPages;
 
-    @ManyToMany(mappedBy = "bookList")//must exist for many to many mapping
+    @ManyToMany(mappedBy = "bookList")//must exist for bidirectional many to many mapping
     private List<User> users;
 
 }
