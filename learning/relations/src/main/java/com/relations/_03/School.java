@@ -30,7 +30,8 @@ public class School {
 
     @OneToMany(
             mappedBy = "school",
-            cascade = CascadeType.ALL
+            cascade = CascadeType.ALL,
+            fetch = FetchType.EAGER
     )
     private List<Student> students;
 
