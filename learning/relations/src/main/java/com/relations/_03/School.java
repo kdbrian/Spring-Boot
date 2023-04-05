@@ -22,5 +22,5 @@ public class School {
     private Long schoolId;
 
     private String schoolName;
-    
+
 }
