@@ -29,6 +29,25 @@ public class UserRepositoryTest {
         userRepository.save(user);
     }
 
+
+    @Test
+    public void testSaveUserBook(){
+        //test for saving a user with a book
+        Book book = Book.builder()//we have to enable cascading to save this book too
+                .title("a test defactor")
+                .noOfPages(290)
+                .genre(Genre.COMPUTER)
+                .build();
+        User user = User.builder()
+                .full_name("demo user")
+                .dateJoined(new Date(System.currentTimeMillis()))
+                .isActive(true)
+                .build();
+        user.addBook(book);//registering the book to the user
+
+        userRepository.save(user);
+    }
+
     @Test
     public void testGetAllUsers(){
         List<User> users = userRepository.findAll();
